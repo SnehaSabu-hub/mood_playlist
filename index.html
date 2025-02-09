@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Playlist Generator</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 2px solid #fcb69f;
+        }
+        button {
+            background-color: #fcb69f;
+            color: #fff;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Your Mood</h2>
+        <select id="mood">
+            <option value="happy">Happy 😊</option>
+            <option value="sad">Sad 😢</option>
+            <option value="relaxed">Relaxed 😌</option>
+            <option value="energetic">Energetic ⚡</option>
+        </select>
+        <button onclick="generatePlaylist()">Get Playlist</button>
+        <div id="playlist"></div>
+    </div>
+    <script>
+        function generatePlaylist() {
+            const mood = document.getElementById("mood").value;
+            const playlistDiv = document.getElementById("playlist");
+            let playlistURL = "";
+
+            const playlists = {
+                happy: "https://open.spotify.com/embed/playlist/0h3y0h3y0h3y0h3y", // Replace with a real playlist
+                sad: "https://open.spotify.com/embed/playlist/1x1x1x1x1x1x1x1x", // Replace with a real playlist
+                relaxed: "https://open.spotify.com/embed/playlist/2y2y2y2y2y2y2y2y", // Replace with a real playlist
+                energetic: "https://open.spotify.com/embed/playlist/3z3z3z3z3z3z3z3z" // Replace with a real playlist
+            };
+
+            playlistURL = playlists[mood];
+            playlistDiv.innerHTML = `<iframe src="${playlistURL}" frameborder="0" allow="encrypted-media"></iframe>`;
+        }
+    </script>
+</body>
+</html>

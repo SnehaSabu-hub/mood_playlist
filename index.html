@@ -9,15 +9,20 @@
             font-family: 'Comic Sans MS', sans-serif;
             text-align: center;
             background: linear-gradient(to right, #ffecd2, #fcb69f);
+            background-image: url('https://images.unsplash.com/photo-1518709268802-8c8c67d1c631?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
             padding: 20px;
         }
         .container {
             max-width: 400px;
             margin: auto;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
         }
         select, button {
             width: 100%;
@@ -30,6 +35,10 @@
         button {
             background-color: #fcb69f;
             color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ffa07a;
         }
         iframe {
             width: 100%;
@@ -38,6 +47,10 @@
             border-radius: 10px;
             border: none;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 24px;
+            color: #fcb69f;
         }
     </style>
 </head>
@@ -60,10 +73,10 @@
             let playlistURL = "";
 
             const playlists = {
-                happy: "https://open.spotify.com/embed/playlist/0h3y0h3y0h3y0h3y", // Replace with a real playlist
-                sad: "https://open.spotify.com/embed/playlist/1x1x1x1x1x1x1x1x", // Replace with a real playlist
-                relaxed: "https://open.spotify.com/embed/playlist/2y2y2y2y2y2y2y2y", // Replace with a real playlist
-                energetic: "https://open.spotify.com/embed/playlist/3z3z3z3z3z3z3z3z" // Replace with a real playlist
+                happy: "https://open.spotify.com/embed/playlist/1l1hjTk0lLkZyhvM6k7J7g", // Replace with real playlist
+                sad: "https://open.spotify.com/embed/playlist/3pXtUOMlyp0X88eD0Tmo6D", // Replace with real playlist
+                relaxed: "https://open.spotify.com/embed/playlist/0tgpAKfZEeiAO6jsucZqio", // Replace with real playlist
+                energetic: "https://open.spotify.com/embed/playlist/0UEi82V8nGH7DuqNrs1KQ0" // Replace with real playlist
             };
 
             playlistURL = playlists[mood];
